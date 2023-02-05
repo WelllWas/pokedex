@@ -1,0 +1,28 @@
+###
+GET http://localhost:8080/teams
+
+###
+GET http://localhost:8080/teams/1
+
+### Create Team
+POST http://localhost:8080/teams
+Content-Type: application/json
+
+{
+    "name": "Fire Team",
+    "pokemons": [
+        11
+    ]
+}
+
+
+###
+PATCH http://localhost:8080/teams/4
+Content-Type: application/json
+
+{
+    "pokemons": [4]
+}
+
+###
+DELETE http://localhost:8080/teams/11

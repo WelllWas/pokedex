@@ -1,0 +1,14 @@
+.title {
+    text-align: center;
+    font-family: 'Pokemon Solid', sans-serif;
+    color: yellow;
+    text-shadow: 2px 0 #00f, -2px 0 #00f, 0 2px #00f, 0 -2px #00f,
+        1px 1px #00f, -1px -1px #00f, 1px -1px #00f, -1px 1px #00f;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.createButton {
+    text-align: center;
+    margin: 10px;
+}

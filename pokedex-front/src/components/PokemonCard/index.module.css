@@ -1,0 +1,9 @@
+.Card{
+    position:relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.Card:hover{
+    z-index: 4;
+    transform: scale(1.3);
+}

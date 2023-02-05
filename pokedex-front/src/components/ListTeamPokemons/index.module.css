@@ -1,0 +1,8 @@
+.pokeImage{
+    width: 100px;
+    height: 100px;
+}
+
+.pokeImage:hover{
+    cursor: pointer;
+}

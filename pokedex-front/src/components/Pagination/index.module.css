@@ -1,0 +1,9 @@
+.navDiv{
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.paginateButton:hover{
+    cursor: pointer;
+}
