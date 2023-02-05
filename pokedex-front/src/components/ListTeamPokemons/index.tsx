@@ -1,6 +1,7 @@
 import styles from "./index.module.css";
 import { useEffect, useState } from "react";
-import { UsePokemonImage, UsePokemonDetails, ModalPokemon} from "../../Utils/Imports"
+import { UsePokemonImage, UsePokemonDetails, ModalPokemon } from "../../Utils/Imports"
+import React from "react";
 
 type pokemon = {
     id: string,
@@ -15,6 +16,7 @@ export function ListTeamPokemons(props: any) {
     const [modal, setModal] = useState(false);
     const [img, setImg] = useState<any>({});
     const [poke, setPoke] = useState<pokemon>();
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     const row = props.pokemons;
 
@@ -39,6 +41,7 @@ export function ListTeamPokemons(props: any) {
             setImg(payload);
         }
         setImages()
+        setIsLoading(false);
     }, [])
 
     async function openDetails(poke: number) {
@@ -48,7 +51,7 @@ export function ListTeamPokemons(props: any) {
 
     return (
         <>
-        <ModalPokemon trigger={modal} setTrigger={toggleModal} poke={poke} modalType={2}></ModalPokemon>
+            <ModalPokemon trigger={modal} setTrigger={toggleModal} poke={poke} modalType={2}></ModalPokemon>
             {row.length == 0 ?
                 <p>No pokemons yet</p>
                 :
@@ -56,7 +59,13 @@ export function ListTeamPokemons(props: any) {
                     {
                         row.map((poke: number, index: any) => {
                             return (
-                                <img onClick={async () => await openDetails(poke)} src={img[index]} alt="poke" className={styles.pokeImage} key={poke} />
+                                <React.Fragment key={index}>
+                                    {
+                                        isLoading == true ?
+                                            <></> :
+                                            <img onClick={async () => await openDetails(poke)} src={img[index]} alt="poke" className={styles.pokeImage} key={poke} />
+                                    }
+                                </React.Fragment>
                             )
                         })
                     }
