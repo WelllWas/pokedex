@@ -10,23 +10,25 @@ export function Pagination({ pokesPerPage, totalPokes, paginate, currentPage }: 
         pageNumbers.push(i);
     }
 
-    return (
+    return (pageNumbers.length != 1) ? (
         <>
-            <div className={styles.navDiv}>
-                <nav>
-                    <ul className='pagination'>
-                        {pageNumbers.map(number => (
-                            <li key={number} className={
-                                number == currentPage ? liStyleActive : liStyle
-                            }>
-                                <a onClick={() => paginate(number)} className='page-link'>
-                                    {number}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-            </div>
+            <footer>
+                <div className={styles.navDiv}>
+                    <nav>
+                        <ul className='pagination'>
+                            {pageNumbers.map(number => (
+                                <li key={number} className={
+                                    number == currentPage ? liStyleActive : liStyle
+                                }>
+                                    <a onClick={() => paginate(number)} className='page-link'>
+                                        {number}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+            </footer>
         </>
-    )
+    ) : <></>;
 }

@@ -1,9 +1,21 @@
-.navDiv{
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
+.navDiv {
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
 }
 
-.paginateButton:hover{
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+
+.paginateButton:hover {
     cursor: pointer;
 }
