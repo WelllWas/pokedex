@@ -1,10 +1,8 @@
 import axios from "axios";
-require('dotenv').config();
-const url = process.env.REACT_APP_BACKEND_API;
 
 export async function savePokemonToTeam(props:any){
     const pokemons = props.pokemon
-    const payload = await axios.patch(`${url}${props.team}`, {
+    const payload = await axios.patch(`https://pokedex-back.herokuapp.com/teams/${props.team}`, {
         pokemons
     })
     return payload;
